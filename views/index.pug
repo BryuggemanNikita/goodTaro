@@ -1,0 +1,65 @@
+html
+  head
+    meta(charset='UTF-8')
+    title Auth
+    link(rel='stylesheet' href='./public/css/style.css')
+  header(style='display: flex; align-items: center')
+    div(style='display: flex; align-items: center')
+      h1 TAROMIX
+  .container
+    .auth-form
+      form#loginForm(action='/auth/login' method='post' onsubmit='handleLogin(event)')
+        legend ВХОД
+        .inputs-container
+          .input-wrapper
+            i#user.input-wrapper__icon
+              svg(width='16' height='16' viewbox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(d='M12.5 13.1455V14.4785H2.50003V13.1455C2.49653 12.4469 2.75812 11.7729 3.23203 11.2595C3.70103 10.7595 4.33703 10.4785 5.00003 10.4785H10C10.3325 10.4805 10.6611 10.5508 10.9652 10.6852C11.2694 10.8195 11.5427 11.015 11.768 11.2595C12.2419 11.7729 12.5035 12.4469 12.5 13.1455Z' stroke='#9A9A9A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+                path(d='M9.2678 6.74628C8.79896 7.21512 8.16308 7.47852 7.50003 7.47852C6.83699 7.47852 6.20111 7.21512 5.73227 6.74628C5.26343 6.27744 5.00003 5.64156 5.00003 4.97852C5.00003 4.31547 5.26343 3.67959 5.73227 3.21075C6.20111 2.74191 6.83699 2.47852 7.50003 2.47852C8.16308 2.47852 8.79896 2.74191 9.2678 3.21075C9.73664 3.67959 10 4.31547 10 4.97852C10 5.64156 9.73664 6.27744 9.2678 6.74628Z' stroke='#9A9A9A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+            input#login-username(type='email' placeholder='Email' name='username' required='')
+          .input-wrapper
+            i#user.input-wrapper__icon
+              svg(width='16' height='16' viewbox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg')
+                g(clip-path='url(#clip0_724_236)')
+                  g(clip-path='url(#clip1_724_236)')
+                    path(fill-rule='evenodd' clip-rule='evenodd' d='M3.16602 6.83039V5.14535C3.16602 2.75211 5.10611 0.812012 7.49935 0.812012C9.89258 0.812012 11.8327 2.75211 11.8327 5.14535V6.83025C13.333 6.99577 14.5 8.2676 14.5 9.81201V13.1453C14.5 14.8022 13.1569 16.1453 11.5 16.1453H3.5C1.84315 16.1453 0.5 14.8022 0.5 13.1453V9.81201C0.5 8.26805 1.66634 6.9965 3.16602 6.83039ZM5.16602 5.14535C5.16602 3.85668 6.21068 2.81201 7.49935 2.81201C8.78801 2.81201 9.83268 3.85668 9.83268 5.14535V6.81201H5.16602V5.14535ZM2.5 9.81201C2.5 9.25973 2.94772 8.81201 3.5 8.81201H11.5C12.0523 8.81201 12.5 9.25973 12.5 9.81201V13.1453C12.5 13.6976 12.0523 14.1453 11.5 14.1453H3.5C2.94772 14.1453 2.5 13.6976 2.5 13.1453V9.81201Z' fill='#9A9A9A')
+                defs
+                  clippath#clip0_724_236
+                    rect(width='16' height='16' fill='white')
+                  clippath#clip1_724_236
+                    rect(width='16' height='16' fill='white' transform='translate(-0.5 0.478516)')
+            input#login-password(type='password' placeholder='Пароль' name='password' required='')
+            i#show.input-wrapper__icon
+              svg(viewbox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(fill-rule='evenodd' clip-rule='evenodd' d='M2.57442 12.7075C2.39493 12.4296 2.25004 12.1889 2.14075 12C2.25004 11.8111 2.39493 11.5704 2.57442 11.2925C3.03544 10.5787 3.71817 9.6294 4.60454 8.68394C6.39553 6.77356 8.89952 5 12 5C15.1005 5 17.6045 6.77356 19.3955 8.68394C20.2818 9.6294 20.9646 10.5787 21.4256 11.2925C21.6051 11.5704 21.75 11.8111 21.8593 12C21.75 12.1889 21.6051 12.4296 21.4256 12.7075C20.9646 13.4213 20.2818 14.3706 19.3955 15.3161C17.6045 17.2264 15.1005 19 12 19C8.89952 19 6.39553 17.2264 4.60454 15.3161C3.71817 14.3706 3.03544 13.4213 2.57442 12.7075ZM23.8941 11.5521C23.8941 11.5521 24.0463 12.1426 23.8941 12.4479L23.8925 12.4511L23.889 12.458L23.8777 12.4802C23.8681 12.4987 23.8547 12.5247 23.8373 12.5576C23.8025 12.6233 23.752 12.7168 23.686 12.834C23.5542 13.0684 23.3602 13.3985 23.1057 13.7925C22.5979 14.5787 21.8432 15.6294 20.8545 16.6839C18.8955 18.7736 15.8995 21 12 21C8.1005 21 5.10449 18.7736 3.14547 16.6839C2.15684 15.6294 1.40207 14.5787 0.894343 13.7925C0.639857 13.3985 0.445799 13.0684 0.313979 12.834C0.248031 12.7168 0.197547 12.6233 0.162761 12.5576C0.145364 12.5247 0.131882 12.4987 0.122345 12.4802L0.110997 12.458L0.107546 12.4511L0.106377 12.4488L0.105932 11.5521L0.107546 11.5489L0.110997 11.542L0.122345 11.5198C0.131882 11.5013 0.145364 11.4753 0.162761 11.4424C0.197547 11.3767 0.248031 11.2832 0.313979 11.166C0.445799 10.9316 0.639857 10.6015 0.894343 10.2075C1.40207 9.42131 2.15684 8.3706 3.14547 7.31606C5.10449 5.22644 8.1005 3 12 3C15.8995 3 18.8955 5.22644 20.8545 7.31606C21.8432 8.3706 22.5979 9.42131 23.1057 10.2075C23.3602 10.6015 23.5542 10.9316 23.686 11.166C23.752 11.2832 23.8025 11.3767 23.8373 11.4424C23.8547 11.4753 23.8681 11.5013 23.8777 11.5198L23.889 11.542L23.8925 11.5489L23.8941 11.5521ZM23.8941 12.4479C24.0348 12.1664 24.0348 11.8336 23.8941 11.5521C23.8941 11.5521 24.0463 12.1426 23.8941 12.4479ZM0.10558 12.4472L0.105756 11.9996L0.105932 11.5521C-0.0348316 11.8336 -0.0351837 12.1657 0.10558 12.4472ZM12 8C10.9391 8 9.92173 8.42143 9.17158 9.17157C8.42143 9.92172 8.00001 10.9391 8.00001 12C8.00001 13.0609 8.42143 14.0783 9.17158 14.8284C9.92173 15.5786 10.9391 16 12 16C13.0609 16 14.0783 15.5786 14.8284 14.8284C15.5786 14.0783 16 13.0609 16 12C16 10.9391 15.5786 9.92172 14.8284 9.17157C14.0783 8.42143 13.0609 8 12 8ZM13.4142 13.4142C13.0391 13.7893 12.5304 14 12 14C11.4696 14 10.9609 13.7893 10.5858 13.4142C10.2107 13.0391 10 12.5304 10 12C10 11.4696 10.2107 10.9609 10.5858 10.5858C10.9609 10.2107 11.4696 10 12 10C12.5304 10 13.0391 10.2107 13.4142 10.5858C13.7893 10.9609 14 11.4696 14 12C14 12.5304 13.7893 13.0391 13.4142 13.4142Z' fill='currentColor')
+        button(type='submit') Войти
+        #error-message-log(style='color: red; height: 10px; text-align: center;')  
+        button.btn-register(type='button' onclick='openRegisterForm()') Нет аккаунта? Зарегистрироваться
+      form#registerForm.form-registration(onsubmit='registerUser(event)' style='display: none;')
+        legend РЕГИСТРАЦИЯ
+        .inputs-container
+          .input-container
+            label(for='register-name') ФИО:
+            .input-wrapper
+              input#register-email(type='text' placeholder='Имя' name='name' required='')
+          .input-container
+            .input-wrapper
+              input#register-email(type='text' placeholder='Фамилия' name='sername' required='')
+          .input-container
+            .input-wrapper
+              input#register-email(type='text' placeholder='Отчество' name='patronymic' required='')
+          .input-container
+            label(for='register-email') Email:
+            .input-wrapper
+              input#register-email(type='email' placeholder='Email' name='email' required='')
+          .input-container
+            label(for='register-password') &Pcy;&acy;&rcy;&ocy;&lcy;&softcy;:
+            .input-wrapper
+              input#register-password(type='password' placeholder='Пароль' name='password' required='')
+            .input-wrapper
+              input#register-password-check(type='password' placeholder='Повторите пароль' name='password' required='')
+            .input-container
+          button(type='submit') &Zcy;&acy;&rcy;&iecy;&gcy;&icy;&scy;&tcy;&rcy;&icy;&rcy;&ocy;&vcy;&acy;&tcy;&softcy;&scy;&yacy;
+          #error-message-reg(style='color: red; height: 10px; text-align: center;')  
+          button.btn-login(type='button' onclick='openLoginForm()') &IEcy;&scy;&tcy;&softcy; &acy;&kcy;&kcy;&acy;&ucy;&ncy;&tcy;? &Acy;&vcy;&tcy;&ocy;&rcy;&icy;&zcy;&icy;&rcy;&ocy;&vcy;&acy;&tcy;&softcy;&scy;&yacy;
+  script(src='./public/js/bundle.js')

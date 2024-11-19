@@ -1,0 +1,45 @@
+{
+    "name": "naimixapp",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "scripts": {
+        "build": "tsc",
+        "start": "npm run build && node ./dist/main.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@types/express": "^5.0.0",
+        "@types/jsonwebtoken": "^9.0.7",
+        "@types/mongodb": "^4.0.7",
+        "bcryptjs": "^2.4.3",
+        "browser-sync": "^3.0.3",
+        "cookie-parser": "^1.4.7",
+        "dotenv": "^16.4.5",
+        "express": "^4.21.1",
+        "fs": "^0.0.1-security",
+        "gulp": "^5.0.0",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-minify": "^3.1.0",
+        "gulp-pug": "^5.0.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^5.1.0",
+        "gulp-uglify": "^3.0.2",
+        "gulp-watch": "^5.0.1",
+        "jsonwebtoken": "^9.0.2",
+        "mongodb": "^5.9.2",
+        "pg": "^8.13.1",
+        "pug": "^3.0.3",
+        "typeorm": "^0.3.20",
+        "winston": "^3.17.0"
+    },
+    "devDependencies": {
+        "@types/bcryptjs": "^2.4.6",
+        "@types/cookie-parser": "^1.4.7",
+        "typescript": "^5.6.3"
+    }
+}

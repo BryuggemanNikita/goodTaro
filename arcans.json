@@ -1,0 +1,90 @@
+[
+    {
+        "name": "Дурак",
+        "arcan_number": 0
+    },
+    {
+        "name": " Маг",
+        "arcan_number": 1
+    },
+    {
+        "name": "Высшая Жрица",
+        "arcan_number": 2
+    },
+    {
+        "name": "Императрица",
+        "arcan_number": 3
+    },
+    {
+        "name": "Император",
+        "arcan_number": 4
+    },
+    {
+        "name": "Иерофант",
+        "arcan_number": 5
+    },
+    {
+        "name": "Влюбленные",
+        "arcan_number": 6
+    },
+    {
+        "name": "Колесница",
+        "arcan_number": 7
+    },
+    {
+        "name": "Сила",
+        "arcan_number": 8
+    },
+    {
+        "name": "Отшельник",
+        "arcan_number": 9
+    },
+    {
+        "name": "Колесо Фортуны",
+        "arcan_number": 10
+    },
+    {
+        "name": "Справедливость",
+        "arcan_number": 11
+    },
+    {
+        "name": "Повешенный",
+        "arcan_number": 12
+    },
+    {
+        "name": "Смерть",
+        "arcan_number": 13
+    },
+    {
+        "name": "Умеренность",
+        "arcan_number": 14
+    },
+    {
+        "name": "Дьявол",
+        "arcan_number": 15
+    },
+    {
+        "name": "Башня",
+        "arcan_number": 16
+    },
+    {
+        "name": "Звезда",
+        "arcan_number": 17
+    },
+    {
+        "name": "Луна",
+        "arcan_number": 18
+    },
+    {
+        "name": "Солнце",
+        "arcan_number": 19
+    },
+    {
+        "name": "Суд",
+        "arcan_number": 20
+    },
+    {
+        "name": "Мир",
+        "arcan_number": 21
+    }
+]
