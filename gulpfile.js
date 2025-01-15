@@ -17,7 +17,7 @@ const paths = {
 function scripts() {
     return gulp
         .src(paths.js)
-        .pipe(concat('bundle.js'))
+        .pipe(concat('auth.js'))
         .pipe(uglify())
         .pipe(gulp.dest(paths.jsDist));
 }

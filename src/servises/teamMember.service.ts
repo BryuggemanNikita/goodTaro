@@ -56,6 +56,10 @@ class TeamMemberService {
 
         return res.status(200).json({ message: 'successfully' });
     }
+
+    public getMembersId(req: Request, res: Response) {
+        
+    }
 }
 
 export const teamMemberService = new TeamMemberService();

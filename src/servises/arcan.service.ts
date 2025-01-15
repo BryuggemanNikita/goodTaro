@@ -5,6 +5,7 @@ import { ArcanDto } from '../dto/arcan.dto.js';
 
 class ArcanService {
     constructor() {}
+
     public async create(req: Request, res: Response) {
         const { name, arcan_number } = req.body;
         const arcan = new ArcanDto(name, arcan_number);
@@ -30,7 +31,6 @@ class ArcanService {
 
         const arcans = await arcanRepository.find();
         console.log(arcans);
-        console.log(123);
     }
 }
 

@@ -1,4 +1,4 @@
-import { arcanService } from '../servises/arcan.service.js';
+import { arcanService } from '../../servises/arcan.service.js';
 import express from 'express';
 
 export const arcanEndpoint = express.Router();

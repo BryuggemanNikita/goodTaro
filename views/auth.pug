@@ -16,7 +16,7 @@ html
               svg(width='16' height='16' viewbox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg')
                 path(d='M12.5 13.1455V14.4785H2.50003V13.1455C2.49653 12.4469 2.75812 11.7729 3.23203 11.2595C3.70103 10.7595 4.33703 10.4785 5.00003 10.4785H10C10.3325 10.4805 10.6611 10.5508 10.9652 10.6852C11.2694 10.8195 11.5427 11.015 11.768 11.2595C12.2419 11.7729 12.5035 12.4469 12.5 13.1455Z' stroke='#9A9A9A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
                 path(d='M9.2678 6.74628C8.79896 7.21512 8.16308 7.47852 7.50003 7.47852C6.83699 7.47852 6.20111 7.21512 5.73227 6.74628C5.26343 6.27744 5.00003 5.64156 5.00003 4.97852C5.00003 4.31547 5.26343 3.67959 5.73227 3.21075C6.20111 2.74191 6.83699 2.47852 7.50003 2.47852C8.16308 2.47852 8.79896 2.74191 9.2678 3.21075C9.73664 3.67959 10 4.31547 10 4.97852C10 5.64156 9.73664 6.27744 9.2678 6.74628Z' stroke='#9A9A9A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
-            input#login-username(type='email' placeholder='Email' name='username' required='')
+            input#login-email(type='email' placeholder='Email' name='email' required='')
           .input-wrapper
             i#user.input-wrapper__icon
               svg(width='16' height='16' viewbox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg')
@@ -41,13 +41,13 @@ html
           .input-container
             label(for='register-name') ФИО:
             .input-wrapper
-              input#register-email(type='text' placeholder='Имя' name='name' required='')
+              input#register-surname(type='text' placeholder='Фамилия' name='surname' required='')
           .input-container
             .input-wrapper
-              input#register-email(type='text' placeholder='Фамилия' name='sername' required='')
+              input#register-name(type='text' placeholder='Имя' name='name' required='')
           .input-container
             .input-wrapper
-              input#register-email(type='text' placeholder='Отчество' name='patronymic' required='')
+              input#register-patronymic(type='text' placeholder='Отчество' name='patronymic' required='')
           .input-container
             label(for='register-email') Email:
             .input-wrapper
@@ -62,4 +62,4 @@ html
           button(type='submit') &Zcy;&acy;&rcy;&iecy;&gcy;&icy;&scy;&tcy;&rcy;&icy;&rcy;&ocy;&vcy;&acy;&tcy;&softcy;&scy;&yacy;
           #error-message-reg(style='color: red; height: 10px; text-align: center;')  
           button.btn-login(type='button' onclick='openLoginForm()') &IEcy;&scy;&tcy;&softcy; &acy;&kcy;&kcy;&acy;&ucy;&ncy;&tcy;? &Acy;&vcy;&tcy;&ocy;&rcy;&icy;&zcy;&icy;&rcy;&ocy;&vcy;&acy;&tcy;&softcy;&scy;&yacy;
-  script(src='./public/js/bundle.js')
+  script(src='./public/js/auth.js')

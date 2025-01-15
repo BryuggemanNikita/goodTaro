@@ -2,6 +2,7 @@ import { TeamMemberEntity } from '../entities/teamMember.js';
 import { CustomException } from '../common/exception/customException.js';
 import { RecruiterEntity } from '../entities/recruiter.js';
 import { DataSource } from 'typeorm';
+
 import { ArcanEntity } from '../entities/arcan.js';
 import { TeamEntity } from '../entities/team.js';
 import { ArcanDto } from '../dto/arcan.dto.js';
@@ -10,7 +11,7 @@ import fs from 'fs';
 export const AppDataSource = new DataSource({
     type: 'postgres',
     host: 'localhost',
-    port: 5432,
+    port: 5433,
     username: 'postgres',
     password: 'root',
     database: 'postgres',

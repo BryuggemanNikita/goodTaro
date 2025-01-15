@@ -4,52 +4,52 @@ import fetch from 'node-fetch';
 import https from 'https';
 
 export class GigaChatClient {
-    #url;
-    #headers;
-    #agent;
-    #oauth;
+    url;
+    headers;
+    agent;
+    oauth;
 
     constructor() {
-        this.#oauth = new OAuthClient();
+        this.oauth = new OAuthClient();
 
-        this.#url =
+        this.url =
             'https://gigachat.devices.sberbank.ru/api/v1/chat/completions';
 
-        this.#agent = new https.Agent({
+        this.agent = new https.Agent({
             rejectUnauthorized: false,
         });
 
-        this.#headers = {
+        this.headers = {
             'Content-Type': 'application/json',
             Accept: 'application/json',
         };
     }
 
     async getSummaryByUserInfo(...userInfoDto) {
-        const payload = this.#createPayload(
+        const payload = this.createPayload(
             PromptCollection.userInfoByFeedbacks,
                 ...userInfoDto,
         );
 
-        return await this.#fetch(payload);
+        return await this.fetch(payload);
     }
 
-    async #fetch(payload) {
-        const resp = await fetch(this.#url, {
+    async fetch(payload) {
+        const resp = await fetch(this.url, {
             method: 'POST',
-            credentials: 'include',
+            // credentials: 'include',
             headers: {
-                ...this.#headers,
-                Authorization: 'Bearer ' + (await this.#oauth.getToken()),
+                ...this.headers,
+                Authorization: 'Bearer ' + (await this.oauth.getToken()),
             },
-            agent: this.#agent,
+            agent: this.agent,
             body: JSON.stringify(payload),
         });
 
         return await resp.json();
     }
 
-    #createPayload(prompt, ...dto) {
+    createPayload(prompt, ...dto) {
         return {
             model: 'GigaChat-Pro',
             messages: [

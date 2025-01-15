@@ -1,26 +1,31 @@
-function openRegisterForm() {
+function openRegisterForm () {
     document.getElementById('registerForm').style.display = 'flex';
     document.getElementById('loginForm').style.display = 'none';
 }
 
-function openLoginForm() {
+function openLoginForm () {
     document.getElementById('registerForm').style.display = 'none';
     document.getElementById('loginForm').style.display = 'flex';
 }
 
-async function handleLogin(event) {
+async function handleLogin (event) {
     event.preventDefault();
 
     const form = document.getElementById('loginForm');
     const errorMessage = document.getElementById('error-message-log');
     errorMessage.textContent = ' ';
     const formData = new FormData(form);
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
     const passwordInput = document.getElementById('login-password');
 
     try {
         const response = await fetch('/api_goodArcan/auth/login', {
             method: 'POST',
-            body: formData
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email, password })
         });
 
         if (!response.ok) {
@@ -28,11 +33,8 @@ async function handleLogin(event) {
             passwordInput.value = '';
             errorMessage.textContent = result.error || 'Неверный логин или пароль';
         } else {
-            const result = await response.json();
-            const token = result.access_token;
-            document.cookie = `access_token=${token}; `;
-            localStorage.setItem('username', formData.get('username'));
-            window.location.href = '/chat';
+            localStorage.setItem('email', formData.get('email'));
+            window.location.href = '/table';
         }
     } catch (error) {
         errorMessage.textContent = 'Произошла ошибка';
@@ -41,30 +43,32 @@ async function handleLogin(event) {
     }
 }
 
-async function registerUser() {
+async function registerUser () {
     event.preventDefault();
+    const name = document.getElementById('register-name').value;
+    const surname = document.getElementById('register-surname').value;
+    const patronymic = document.getElementById('register-patronymic').value;
     const email = document.getElementById('register-email').value;
     const password = document.getElementById('register-password').value;
     const passwordCheck = document.getElementById('register-password-check').value;
+    const payload = { name, surname, patronymic, email, password };
+    console.log(payload);
 
     const errorMessage = document.getElementById('error-message-reg');
     errorMessage.textContent = ' ';
 
     if (password === passwordCheck) {
         try {
-            const response = await fetch('/auth/register', {
+            const response = await fetch('/api_goodArcan/auth/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ email, password })
+                body: JSON.stringify(payload)
             });
-
-            const result = await response.json();
-
             if (response.ok) {
                 console.log('ok');
-                window.location.href = '/auth';
+                window.location.href = '/api_goodArcan/auth';
             } else {
                 errorMessage.textContent = 'Пользователь с таким E-mail уже существует';
             }

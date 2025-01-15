@@ -1,14 +1,14 @@
 export class UserArcanDto {
     name;
-    date;
+    arcan;
 
-    constructor(name, date) {
+    constructor(name, arcan) {
         this.name = name || '';
-        this.date = date || '';
+        this.arcan = arcan || '';
     }
 
     toString() {
         return `Имя: ${this.name}
-        Дата рождения: ${this.date}\n`
+        Номер аркана: ${this.arcan}\n`
     }
 }

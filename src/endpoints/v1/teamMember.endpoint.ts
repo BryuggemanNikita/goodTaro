@@ -1,4 +1,4 @@
-import { teamMemberService } from '../servises/teamMember.service.js';
+import { teamMemberService } from '../../servises/teamMember.service.js';
 import { NextFunction, Request, Response } from 'express';
 import express from 'express';
 

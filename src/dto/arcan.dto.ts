@@ -1,5 +1,4 @@
 import { IArcan } from '../common/interface/IArcan.js';
-import { ITeamMember } from '../common/interface/ITeamMember.js';
 
 export class ArcanDto implements IArcan {
     id: number;
